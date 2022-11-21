@@ -23,17 +23,16 @@ DROP TABLE IF EXISTS `passenger_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `passenger_details` (
-  `passenger_id` int NOT NULL,
-  `passenger_name` varchar(50) NOT NULL,
-  `passenger_username` varchar(50) NOT NULL,
+  `passenger_id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(50) NOT NULL,
   `passwrd` varchar(50) NOT NULL,
   `mobile` varchar(50) NOT NULL,
-  `address` varchar(50) NOT NULL,
-  `dob` date NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `last_name` varchar(20) NOT NULL,
   PRIMARY KEY (`passenger_id`),
-  UNIQUE KEY `passenger_username` (`passenger_username`),
-  UNIQUE KEY `mobile` (`mobile`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `mobile` (`mobile`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +41,7 @@ CREATE TABLE `passenger_details` (
 
 LOCK TABLES `passenger_details` WRITE;
 /*!40000 ALTER TABLE `passenger_details` DISABLE KEYS */;
+INSERT INTO `passenger_details` VALUES (1,'nikhil','g','8848505534','nik.gokul@gmail.com','8848505534');
 /*!40000 ALTER TABLE `passenger_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-11-06 20:37:02
+-- Dump completed on 2022-11-21 17:35:11
