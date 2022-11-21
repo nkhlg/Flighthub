@@ -105,7 +105,19 @@ color: black;
     <label for="confirmpassword">Confirm password:</label>
     <input style="background-color:rgb(22, 22, 22) ;border:none;" type="password" class="form-control" id="cps" name="confirmpassword" required>
   </div>
- 
+    <div>
+            {{#if result}}
+    {{#if result.success}}
+    <div class="alert alert-success">
+          Data saved successfully
+    </div>
+    {{else}}
+     <div class="alert alert-danger">
+          Wrong email or password
+    </div>
+    {{/if}}
+    {{/if}}
+          </div>
  
   <button type="submit" class="btn btn-default" id="btnsub" style="color:white;background-color:rgb(67, 67, 198);border: none;width: 100%;"><b>Register</b></button>
 </form>
